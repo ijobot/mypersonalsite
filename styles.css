@@ -1,0 +1,160 @@
+/* Clearouts and Resets */
+/* Clearouts and Resets */
+/* Clearouts and Resets */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+/* Presets */
+/* Presets */
+/* Presets */
+
+:root {
+    --black: rgb(14, 5, 5);
+    --darkRed: rgb(70, 0, 0);
+    --white: rgb(255, 245, 245);
+
+    --font-main: 'Nunito', sans-serif;
+    --font-logo: 'Lato', sans-serif;
+}
+
+html {
+    min-height: 100%;
+    min-width: 100%;
+    height: 1200px;
+    width: 1200px;
+    background: 
+        repeating-radial-gradient(
+        at top right, 
+        var(--darkRed) 0%, 
+        var(--black) 3%, 
+        var(--black) 4%, 
+        var(--darkRed) 7%),
+        
+        repeating-radial-gradient(
+        at top left, 
+        var(--darkRed) 0%, 
+        var(--black) 3%, 
+        var(--black) 4%, 
+        var(--darkRed) 7%),
+
+        repeating-radial-gradient(
+        at bottom left, 
+        var(--darkRed) 0%, 
+        var(--black) 3%, 
+        var(--black) 4%, 
+        var(--darkRed) 7%),
+
+        repeating-radial-gradient(
+        at bottom right, 
+        var(--darkRed) 0%, 
+        var(--black) 3%, 
+        var(--black) 4%, 
+        var(--darkRed) 7%);
+            
+    background-blend-mode: lighten, lighten, lighten, lighten;
+}
+
+
+
+/* Navbar */
+/* Navbar */
+/* Navbar */
+
+nav {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background: var(--black);
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    height: 4rem;
+}
+
+.brand {
+    display: flex;
+    height: auto;
+    align-items: center;
+    margin: 0 0 0 5%;
+    font-family: var(--font-logo);
+    font-size: 1.5em;
+    font-weight: 900;
+    color: var(--white);
+}
+
+.brand:hover {
+    cursor: none;
+    animation-name: flipspin;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+.brand span {
+    font-weight: 100;
+}
+
+@keyframes flipspin {
+    0% {transform: rotateY(2deg) rotateZ(0deg)}
+    25% {transform: rotateY(88deg) rotateZ(6deg)}
+    50% {transform: rotateY(180deg) rotateZ(0deg)}
+    75% {transform: rotateY(88deg) rotateZ(-6deg)}
+    100% {transform: rotateY(2deg) rotateZ(0deg)}
+}
+
+.nav-menu {
+    margin-right: 5%;
+    align-self: center;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    list-style: none;
+    margin-left: 1em;
+}
+
+.menu-link {
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-logo);
+    font-weight: 100;
+    padding: 1em;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+    text-shadow: 
+        4px 4px 6px white,
+        -4px -4px 6px white,
+        -4px 4px 6px white,
+        4px -4px 6px white;
+    outline: unset;
+}
+
+
+/* Hero Area */
+/* Hero Area */
+/* Hero Area */
+  
