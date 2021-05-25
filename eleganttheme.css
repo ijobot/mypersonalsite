@@ -2,24 +2,27 @@
 /* CLEAROUTS, RESETS, PRESETS */
 /* CLEAROUTS, RESETS, PRESETS */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 :root {
-    --black: rgb(14, 5, 5);
-    --darkRed: rgb(100, 0, 0);
-    --lightRed: rgb(155, 82, 82);
-    --white: rgb(255, 245, 245);
+    --black: rgb(44, 44, 44);
+    --white: rgb(255, 255, 255);
+    --lightBlue: rgb(130, 176, 236);
+    --darkBlue: rgb(9, 73, 156);
 
-    --font-main: 'Lato', sans-serif;
+    --font-main: 'Raleway', sans-serif;
+    --font-secondary: 'Nunito', sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: var(--font-main);
-    font-weight: 700;
-    color: var(--white);
-    background-color: var(--black);
+    font-weight: 400;
+    color: var(--black);
+    background-color: var(--white);
+    font-size: 16px;
 }
 
 * {
@@ -46,41 +49,11 @@ img {
     position: relative;
     min-height: 100%;
     min-width: 100%;
+    height: fit-content;
 }
 
 .bg {
-    background-image: 
-        repeating-radial-gradient(
-        at top right, 
-        var(--darkRed) 0%, 
-        var(--black) 3%, 
-        var(--black) 4%, 
-        var(--darkRed) 7%),
-        
-        repeating-radial-gradient(
-        at top left, 
-        var(--darkRed) 0%, 
-        var(--black) 3%, 
-        var(--black) 4%, 
-        var(--darkRed) 7%),
-
-        repeating-radial-gradient(
-        at bottom left, 
-        var(--darkRed) 0%, 
-        var(--black) 3%, 
-        var(--black) 4%, 
-        var(--darkRed) 7%),
-
-        repeating-radial-gradient(
-        at bottom right, 
-        var(--darkRed) 0%, 
-        var(--black) 3%, 
-        var(--black) 4%, 
-        var(--darkRed) 7%);
-            
-    background-blend-mode: lighten;
-    background-size: 1400px 1400px;
-    background-position: top center;
+    background: var(--lightBlue);
 }
 
 h1, h2, p {
@@ -97,52 +70,21 @@ button {
     position: relative;
     box-sizing: border-box;
     padding: .25em;
-    width: 120px;
+    min-width: 120px;
     font-family: inherit;
     font-size: inherit;
-    font-weight: 300;
     text-transform: uppercase;
-    background-color: var(--black);
-    color: var(--white);
-    border: .5px solid var(--white);
+    font-weight: 800;
+    background-color: var(--white);
+    color: var(--darkBlue);
+    border: 2px solid var(--darkBlue);
     cursor: pointer;
-    transition: all 500ms ease;
 }
 
 button:hover,
 button:focus {
-    text-shadow: 
-        2px 0px 4px var(--white),
-        0px -2px 4px var(--white),
-        0px 2px 4px var(--white),
-        -2px 0px 4px var(--white);
-    box-shadow: 
-        2px 0px 4px var(--white),
-        0px -2px 4px var(--white),
-        0px 2px 4px var(--white),
-        -2px 0px 4px var(--white);
-}
-
-button::after {
-    content: '';
-    position: absolute;
-    background-color: var(--white);
-    left: -10%;
-    bottom: -.9em;
-    height: 50%;
-    width: 120%;
-    transform: scaleY(0);
-    filter: blur(.4em);
-    opacity: 0;
-    transform-origin: top;
-    transition: all 500ms ease;
-}
-
-button:hover::after,
-button:focus::after {
-    transform: scaleY(.3);
-    opacity: 1;
-    outline: none;
+    color: var(--white);
+    background: var(--lightBlue);
 }
 
 
@@ -155,8 +97,8 @@ nav {
     position: fixed;
     top: 0px;
     width: 100%;
-    background-color: var(--black);
-    border-bottom: 2px solid var(--darkRed);
+    background-color: var(--white);
+    border-bottom: 2px solid var(--darkBlue);
     display: flex;
     justify-content: space-between;
     justify-items: center;
@@ -170,12 +112,12 @@ nav {
     height: auto;
     align-self: center;
     font-size: 1.5em;
-    font-weight: 900;
-    color: var(--white);
+    font-weight: 800;
+    color: var(--black);
 }
 
 .designs {
-    font-weight: 300;
+    font-weight: 100;
     align-self: center;
 }
 
@@ -209,44 +151,20 @@ nav {
     transition: all 250ms ease-in-out;
 }
 
+.menu-item:hover {
+    transform: scale(1.4);
+}
+
 .menu-link {
-    color: var(--white);
-    font-weight: 300;
+    color: var(--black);
+    font-weight: 400;
     padding: 1em;
-    text-shadow: none;
-    text-transform: uppercase;
-    transition: all 500ms ease-in-out;
+    transition: all 250ms ease-in-out;
 }
 
 .menu-link:hover,
 .menu-link:focus {
-    text-shadow: 
-        2px 0px 4px var(--white),
-        0px -2px 4px var(--white),
-        0px 2px 4px var(--white),
-        -2px 0px 4px var(--white);
-    outline: none;
-}
-
-.menu-link::after {
-    content: '';
-    position: absolute;
-    background-color: var(--white);
-    left: 10%;
-    height: 60%;
-    width: 80%;
-    top: 90%;
-    transform: scaleY(0);
-    filter: blur(.4em);
-    opacity: 0;
-    transform-origin: top;
-    transition: all 500ms ease;
-}
-
-.menu-link:hover::after,
-.menu-link:focus::after {
-    transform: scaleY(.3);
-    opacity: 1;
+    color: var(--darkBlue);
 }
 
 .current-page {
@@ -265,15 +183,15 @@ nav {
     top: calc(4rem - 2px);
     display: flex;
     flex-direction: column;
-    background-color: var(--black);
+    background-color: var(--white);
     width: 180px;
     padding: calc(30px - .5em) 0;
-    border-left: 2px solid var(--darkRed);
-    border-right: 2px solid var(--darkRed);
-    border-bottom: 2px solid var(--darkRed);
+    border-left: 2px solid var(--darkBlue);
+    border-right: 2px solid var(--darkBlue);
+    border-bottom: 2px solid var(--darkBlue);
     transform: scaleY(0);
     transform-origin: top;
-    transition: all 500ms ease;
+    transition: all 250ms ease;
 }
 
 .open {
@@ -303,7 +221,7 @@ nav {
     margin: 8rem;
     height: fit-content;
     padding: 1.5rem 2.5rem;
-    border: 9px solid var(--white);
+    border: 9px solid var(--darkBlue);
 }
 
 .hero-text {
@@ -314,7 +232,7 @@ nav {
     text-align: center;
     line-height: 1.4;
     margin: 0;
-    color: var(--white);
+    color: var(--darkBlue);
 }
 
 .span1 {
@@ -343,15 +261,15 @@ nav {
 }
 
 .white {
-    background-color: var(--black);
+    background-color: var(--white);
 }
 
 .dark {
-    background-color: var(--darkRed);
+    background-color: var(--darkBlue);
 }
 
 .light {
-    background-color: var(--lightRed);
+    background-color: var(--lightBlue);
 }
 
 
@@ -366,13 +284,24 @@ nav {
     grid-template-areas: 
         "title . image"
         "text . image";
-    background-color: var(--darkRed);
+    background-color: var(--darkBlue);
     color: var(--white);
     height: auto;
     width: 60%;
     padding: 3rem 3.5rem;
-    outline: 9px solid var(--lightRed);
+    outline: 9px solid var(--lightBlue);
     outline-offset: -18px;
+}
+
+.blurb1::before {
+    position: absolute;
+    content: '';
+    width: 9px;
+    height: 50%;
+    background-color: var(--lightBlue);
+    left: 50%;
+    bottom: calc(100% - 10px);
+    transform: translateX(-50%);
 }
 
 .blurb1::after {
@@ -380,7 +309,7 @@ nav {
     content: '';
     width: 9px;
     height: 50%;
-    background-color: var(--darkRed);
+    background-color: var(--darkBlue);
     left: 70%;
     bottom: -50%;
 }
@@ -392,7 +321,7 @@ nav {
 }
 
 .blurb1-text {
-    font-family: var(--font-main);
+    font-family: var(--font-secondary);
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.4;
@@ -421,12 +350,12 @@ nav {
     grid-template-areas: 
         "title title"
         "list1 list2";
-    background-color: var(--lightRed);
+    background-color: var(--lightBlue);
     color: var(--white);
     height: auto;
     width: 70%;
     padding: 3rem 3.5rem;
-    outline: 9px solid var(--black);
+    outline: 9px solid var(--white);
     outline-offset: -18px;
 }
 
@@ -435,7 +364,7 @@ nav {
     content: '';
     width: 9px;
     height: 90%;
-    background-color: var(--black);
+    background-color: var(--white);
     left: 30%;
     top: calc(-90% + 10px);
 }
@@ -445,7 +374,7 @@ nav {
     content: '';
     width: 9px;
     height: 90%;
-    background-color: var(--black);
+    background-color: var(--white);
     left: 30%;
     bottom: calc(-90% + 10px);
 }
@@ -454,7 +383,7 @@ nav {
     position: absolute;
     height: 9px;
     width: 9px;
-    background-color: var(--lightRed);
+    background-color: var(--lightBlue);
 }
 
 .b2ob1 {
@@ -475,7 +404,7 @@ nav {
 
 .tech-list {
     flex-direction: column;
-    font-family: var(--font-main);
+    font-family: var(--font-secondary);
     font-size: 1.2rem;
     margin: 0;
     padding: 0;
@@ -514,12 +443,12 @@ nav {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: var(--darkRed);
+    background-color: var(--darkBlue);
     color: var(--white);
     height: auto;
     width: 60%;
     padding: 3rem 3.5rem;
-    outline: 9px solid var(--lightRed);
+    outline: 9px solid var(--lightBlue);
     outline-offset: -18px;
 }
 
@@ -528,9 +457,20 @@ nav {
     content: '';
     width: 9px;
     height: 50%;
-    background-color: var(--darkRed);
+    background-color: var(--darkBlue);
     left: 70%;
     bottom: calc(100% - 9px);
+}
+
+.blurb3::after {
+    position: absolute;
+    content: '';
+    width: 9px;
+    height: 50%;
+    background-color: var(--lightBlue);
+    left: 50%;
+    bottom: calc(-50% + 10px);
+    transform: translateX(-50%);
 }
 
 .blurb3-title {
@@ -547,12 +487,7 @@ nav {
     margin: 8rem;
     height: fit-content;
     padding: 1.5rem 2.5rem;
-    border: 9px solid var(--white);
-    background-color: transparent;
-}
-
-.light {
-    background-color: transparent;
+    border: 9px solid var(--darkBlue);
 }
 
 
@@ -563,8 +498,8 @@ nav {
 
 .footer {
     width: 100%;
-    background-color: var(--black);
-    border-top: 2px solid var(--darkRed);
+    background-color: var(--white);
+    border-top: 2px solid var(--darkBlue);
     display: flex;
     justify-content: space-between;
     justify-items: center;
@@ -578,68 +513,31 @@ nav {
 }
 
 .links-option {
-    margin-left: 2em;
+    margin-left: 4em;
 }
 
 .links-option a {
-    color: var(--white);
+    color: var(--black);
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 100%;
-}
-
-.links-option a:focus {
-    outline: none;
-}
-
-.links-option a:focus p {
-    text-shadow: 
-        2px 0px 4px var(--white),
-        0px -2px 4px var(--white),
-        0px 2px 4px var(--white),
-        -2px 0px 4px var(--white);
+    transform: scale(1);
+    transition: all 250ms ease-in-out;
 }
 
 .links-option p {
     position: relative;
-    font-size: .85rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    transition: all 500ms ease;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
-.links-option:hover p,
-.links-option:focus p {
-    text-shadow: 
-        2px 0px 4px var(--white),
-        0px -2px 4px var(--white),
-        0px 2px 4px var(--white),
-        -2px 0px 4px var(--white);
-    outline: none;
-}
-
-.links-option p::after {
-    content: '';
-    position: absolute;
-    background-color: var(--white);
-    left: 0;
-    bottom: -55%;
-    height: 60%;
-    width: 100%;
-    transform: scaleY(0);
-    filter: blur(.4em);
-    opacity: 0;
-    transform-origin: top;
-    transition: all 500ms ease;
-}
-
-.links-option:hover p::after,
-.links-option:focus p::after {
-    transform: scaleY(.3);
-    opacity: 1;
+.links-option a:hover {
+    transform: scale(1.4);
+    color: var(--darkBlue)
 }
 
 .footer i {
+    font-size: 1.25em;
     margin-right: .5rem;
 }
