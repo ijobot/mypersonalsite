@@ -17,10 +17,15 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--font-main);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--black);
+    text-shadow: 
+        .5px .5px var(--white),
+        -.5px -.5px var(--white),
+        -.5px .5px var(--white),
+        .5px -.5px var(--white);
     background-color: var(--white);
-    font-size: 20px;
+    font-size: 16px;
 }
 
 * {
@@ -57,12 +62,21 @@ img {
         repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 32% 33%, transparent 33% 67%, rgba(255, 255, 255, 0.4) 67% 68%),
         repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.4) 32% 33%, transparent 33% 67%, rgba(255, 255, 255, 0.4) 67% 68%);
     background-blend-mode: lighten;
-    background-size: 1400px auto, 25px 25px, 25px 25px;
+    background-size: auto auto, 25px 25px, 25px 25px;
     background-position: center, center;
 }
 
 h1, h2, p {
     margin: 0;
+}
+
+h1, h2 {
+    font-weight: 900;
+}
+
+p {
+    font-size: 1.35rem;
+    font-weight: 700;
 }
 
 
@@ -74,11 +88,11 @@ h1, h2, p {
 button {
     position: relative;
     box-sizing: border-box;
-    padding: .25em;
-    min-width: 120px;
+    height: 2rem;
+    width: 7rem;
     font-family: inherit;
-    font-size: inherit;
-    font-weight: 900;
+    font-size: 1.35rem;
+    line-height: 0;
     background-color: var(--white);
     color: var(--black);
     border: 4px solid transparent;
@@ -120,16 +134,17 @@ nav {
     font-size: 1.5em;
     font-weight: 900;
     color: var(--black);
+    transform-origin: center;
 }
 
 .designs {
-    font-weight: 300;
     align-self: center;
+    font-weight: 300;
 }
 
 .brand:hover {
     cursor: none;
-    animation-name: flipspin;
+    animation-name: swing;
     animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -156,11 +171,11 @@ nav {
 }
 
 .menu-link {
+    font-size: 1.35rem;
     color: var(--black);
-    font-weight: 700;
     padding: 1em;
     text-shadow: none;
-    transition: all 500ms ease;
+    transition: all 250ms ease-in-out;
 }
 
 .menu-link:hover,
@@ -170,13 +185,11 @@ nav {
         0px -2px 4px var(--lightBlue),
         0px 2px 4px var(--lightBlue),
         -2px 0px 4px var(--lightBlue);
-    outline: none;
 }
 
 .current-page {
-    font-weight: 700;
+    font-weight: 900;
     color: var(--purple);
-    position: relative;
     pointer-events: none;
 }
 
@@ -186,19 +199,18 @@ nav {
 
 .themes-menu {
     position: absolute;
-    right: calc(5% - 30px);
+    right: 3rem;
     top: calc(4rem - 2px);
     display: flex;
     flex-direction: column;
     background-color: var(--white);
-    width: 180px;
-    padding: calc(30px - .5em) 0;
+    width: 9rem;
     border-left: 2px solid var(--purple);
     border-right: 2px solid var(--purple);
     border-bottom: 2px solid var(--purple);
     transform: scaleY(0);
     transform-origin: top;
-    transition: all 500ms ease;
+    transition: all 250ms ease-in-out;
 }
 
 .open {
@@ -206,15 +218,21 @@ nav {
 }
 
 .themes-option {
-    margin: .5em auto;
+    margin: 0 auto 1rem;
 }
 
-@keyframes flipspin {
-    0% {transform: rotateY(2deg) rotateZ(0deg)}
-    25% {transform: rotateY(88deg) rotateZ(6deg)}
-    50% {transform: rotateY(180deg) rotateZ(0deg)}
-    75% {transform: rotateY(88deg) rotateZ(-6deg)}
-    100% {transform: rotateY(2deg) rotateZ(0deg)}
+@keyframes swing {
+    0% {transform: rotateZ(0deg) translateX(0px)}
+    20% {transform: rotateZ(9deg) translateX(-28px)}
+
+    25% {transform: rotateZ(10deg) translateX(-30px)}
+    30% {transform: rotateZ(10deg) translateX(-30px)}
+
+    70% {transform: rotateZ(-10deg) translateX(30px)}
+    75% {transform: rotateZ(-10deg) translateX(30px)}
+
+    80% {transform: rotateZ(-9deg) translateX(28px)}
+    100% {transform: rotateZ(0deg) translateX(0px)}
 }
 
 
@@ -232,14 +250,14 @@ nav {
     border-image: linear-gradient(to right, var(--purple), var(--lightBlue));
     border-image-slice: 1;
     box-shadow: 
-        1px 1px var(--white),
-        -1px -1px var(--white),
-        -1px 1px var(--white),
-        1px -1px var(--white), 
-        inset 1px 1px var(--white),
-        inset -1px -1px var(--white),
-        inset -1px 1px var(--white),
-        inset 1px -1px var(--white);
+        .5px .5px var(--white),
+        -.5px -.5px var(--white),
+        -.5px .5px var(--white),
+        .5px -.5px var(--white), 
+        inset .5px .5px var(--white),
+        inset -.5px -.5px var(--white),
+        inset -.5px .5px var(--white),
+        inset .5px -.5px var(--white);
 }
 
 .hero-text {
@@ -273,13 +291,14 @@ nav {
 
 .main {
     width: 100%;
-    height: 120vh;
+    height: fit-content;
     display: grid;
     place-items: center;
 }
 
 .white {
     background-color: var(--white);
+    position: relative;
 }
 
 .dark {
@@ -290,6 +309,11 @@ nav {
     background-color: var(--lightBlue);
 }
 
+.blurb1,
+.blurb2,
+.blurb3 {
+    margin: 8rem auto;
+}
 
 
 /* BLURB 1 */
@@ -311,19 +335,29 @@ nav {
     outline-offset: -18px;
 }
 
+.blurb1::before {
+    position: absolute;
+    content: '';
+    width: 9px;
+    height: calc(8rem + 9px);
+    background-image: linear-gradient(to bottom, transparent, var(--purple));
+    left: 50%;
+    bottom: calc(100% - 9px);
+    transform: translateX(-50%);
+}
+
 .blurb1::after {
     position: absolute;
     content: '';
     width: 9px;
-    height: 50%;
+    height: calc(8rem + 9px);
     background-color: var(--purple);
     left: 70%;
-    bottom: -50%;
+    top: calc(100% - 9px);
 }
 
 .blurb1-title {
     font-size: 2.4em;
-    font-weight: 900;
     grid-area: title;
     place-self: start;
 }
@@ -331,7 +365,6 @@ nav {
 .blurb1-text {
     font-family: var(--font-main);
     font-size: 1.2rem;
-    font-weight: 700;
     line-height: 1.4;
     margin: 1em 0 0;
     grid-area: text;
@@ -344,6 +377,24 @@ nav {
     border-radius: 50%;
     grid-area: image;
     place-self: center end;
+}
+
+.connector {
+    position: absolute;
+    width: 9px;
+    height: calc(16rem + 10px);
+    background-color: var(--lightBlue);
+}
+
+.c1 {
+    bottom: -8rem;
+    left: 70%;
+}
+
+.c2 {
+    left: 25%;
+    top: -8rem;
+    z-index: 5;
 }
 
 
@@ -371,20 +422,20 @@ nav {
     position: absolute;
     content: '';
     width: 9px;
-    height: 90%;
+    height: calc(8rem + 10px);
     background-color: var(--white);
     left: 30%;
-    top: calc(-90% + 10px);
+    bottom: calc(100% - 10px);
 }
 
 .blurb2::after {
     position: absolute;
     content: '';
     width: 9px;
-    height: 90%;
+    height: calc(8rem + 10px);
     background-color: var(--white);
     left: 30%;
-    bottom: calc(-90% + 10px);
+    top: calc(100% - 10px);
 }
 
 .blurb2-outline-breaker {
@@ -406,7 +457,6 @@ nav {
 
 .blurb2-title {
     font-size: 2.4em;
-    font-weight: 900;
     margin: 0 0 .75em;
     grid-area: title;
 }
@@ -442,7 +492,6 @@ nav {
 .tech-item i {
     margin-left: .5em;
     font-size: 1.6em;
-    font-weight: 700;
 }
 
 
@@ -467,20 +516,26 @@ nav {
     position: absolute;
     content: '';
     width: 9px;
-    height: 50%;
+    height: calc(8rem + 9px);
     background-color: var(--purple);
     left: 70%;
     bottom: calc(100% - 9px);
 }
 
+.blurb3::after {
+    position: absolute;
+    content: '';
+    width: 9px;
+    height: calc(8rem + 9px);
+    background-image: linear-gradient(to top, transparent, var(--purple));
+    left: 50%;
+    top: calc(100% - 9px);
+    transform: translateX(-50%);
+}
+
 .blurb3-title {
     font-size: 2.4em;
     margin: 0 0 .75em;
-    font-weight: 900;
-}
-
-.blurb3-text {
-    font-weight: 700;
 }
 
 
@@ -496,14 +551,14 @@ nav {
     border-image: linear-gradient(to right, var(--purple), var(--lightBlue));
     border-image-slice: 1;
     box-shadow: 
-        1px 1px var(--white),
-        -1px -1px var(--white),
-        -1px 1px var(--white),
-        1px -1px var(--white), 
-        inset 1px 1px var(--white),
-        inset -1px -1px var(--white),
-        inset -1px 1px var(--white),
-        inset 1px -1px var(--white);
+        .5px .5px var(--white),
+        -.5px -.5px var(--white),
+        -.5px .5px var(--white),
+        .5px -.5px var(--white), 
+        inset .5px .5px var(--white),
+        inset -.5px -.5px var(--white),
+        inset -.5px .5px var(--white),
+        inset .5px -.5px var(--white);
 }
 
 .light {
@@ -550,8 +605,8 @@ nav {
 
 .links-option p {
     position: relative;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.35rem;
+    font-weight: 300;
     transition: all 500ms ease;
 }
 

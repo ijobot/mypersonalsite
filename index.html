@@ -5,9 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="css" href="" rel="stylesheet">
-    <script type="text/javascript" src="./script.js" defer></script>
+    <script type="text/javascript" src="./initial.js"></script>
     <script src="https://kit.fontawesome.com/6c161899ed.js" crossorigin="anonymous"></script>
-    <title>I,Jobot Designs</title>
+    <title>I,Jobot: design portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="./images/FaviconI.png"/>
+    <meta name="description" content="A web development portfolio to introduce I,Jobot to potential employers, clients, and investors.  Original layouts, designs, and UI/UX.">
+    <meta property="og:title" content="I,Jobot's web development portfolio.">
+    <meta property="og:description" content="A place to show off my design and development skills.">
+    <meta property="og:image" content="https://ijobot.tech/images/ProfilePic.jpg">
+    <meta property="og:url" content="https://ijobot.tech/index.html">
+    <meta name="twitter:title" content="I,Jobot's web development portfolio">
+    <meta name="twitter:description" content="A place to show off my design and development skills.">
+    <meta name="twitter:image" content="https://ijobot.tech/images/ProfilePic.jpg">
+    <meta name="author" content="Joe Loftus aka I,Jobot">
 </head>
 
 <body>
@@ -16,7 +26,9 @@
 
 
         <!-- NAV BELOW THIS LINE -->
-        <div id="site-topper"></div>
+        <div id="site-topper">
+            <div class="brand">I,Jobot<span class="designs">Portfolio</span></div>
+        </div>
 
         <nav>
 
@@ -31,14 +43,23 @@
                 </ul>
             </div>
 
+            <button id="pages">Page</button>
+
+            <div class="pages-menu">
+                <button id="home" class="themes-option"><a href="index.html">Home</a></button>
+                <button id="about" class="themes-option"><a href="about.html">About</a></button>
+                <button id="projects" class="themes-option"><a href="projects.html">Projects</a></button>
+                <button id="contact" class="themes-option"><a href="contact.html">Contact</button></a>
+            </div>
+                        
             <button id="themes">Theme</button>
 
             <div class="themes-menu">
-                <button id="elegant" class="themes-option">Elegant</button>
+                <button id="elegant" class="themes-option">Light</button>
                 <button id="dark" class="themes-option">Dark</button>
-                <button id="light" class="themes-option">Light</button>
-                <button id="neon" class="themes-option">Neon</button>
-                <button id="confetti" class="themes-option">Confetti</button>
+                <!-- <button id="light" class="themes-option">Light</button> -->
+                <!-- <button id="neon" class="themes-option">Neon</button>
+                <button id="confetti" class="themes-option">Confetti</button> -->
             </div>
 
         </nav>
@@ -55,16 +76,17 @@
             <div class="main white">
                 <div class="blurb1">
                     <div class="blurb1-outline-breaker"></div>
-                    <h1 class="blurb1-title">About I,Jobot</h1>
+                    <h2 class="blurb1-title">About I,Jobot</h2>
                     <p class="blurb1-text">My name is Joe Loftus, and I'm a web developer.  I have a passion for design, a love of learning, and a dedication to perfection.  When I find a new outlet for my creativity, I go all in.  Teaching myself to code has been a fantastic journey, and now it's leading me toward an exciting new career.</p>
                     <img class="blurb1-image" src="./images/ProfilePic.jpg" alt="Profile picture of the creator of I,Jobot Designs">
                 </div>
+                <div class="connector c1"></div>
             </div>
 
             <div class="main dark">
                 <div class="blurb2">
                     <div class="blurb2-outline-breaker b2ob1"></div>
-                    <h1 class="blurb2-title">Languages, frameworks, and programs</h1>
+                    <h2 class="blurb2-title">Languages, frameworks, and programs</h2>
                     <ul class="tech-list list1">
                         <li class="tech-item">HTML5 <i class="fab fa-html5"></i></li>
                         <li class="tech-item">CSS3 <i class="fab fa-css3-alt"></i></li>
@@ -80,9 +102,9 @@
             </div>
 
             <div class="main white">
+                <div class="connector c2"></div>
                 <div class="blurb3">
-                    <div class="blurb3-outline-breaker"></div>
-                    <h1 class="blurb3-title">Design considerations</h1>
+                    <h2 class="blurb3-title">Design considerations</h2>
                     <ul class="tech-list list3">
                         <li class="tech-item">Responsive viewing at any screen size</li>
                         <li class="tech-item">Search optimization on a per-page basis</li>
@@ -96,9 +118,9 @@
                 </div>
             </div>
 
-            <div class="light">
+            <div class="light main">
                 <div class="blurb4">
-                    <h1 class="hero-text"><span class="span1">Ready to work.<br></span><span class="span2">Available immediately.<br></span><span class="span3">Strong team asset.</span></h1>
+                    <h1 class="hero-text"><span class="span1">Ready to work.<br></span><span class="span2">Available immediately.<br></span><span class="span3"><a class="callnow" href="+353-83-148-2132">Make the call.</a></span></h1>
                 </div>
             </div>
         </main>
@@ -137,5 +159,6 @@
         </footer>
 
     </div>
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
